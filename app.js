@@ -1,22 +1,23 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ui.router']);
 
-app.controller('main', function($scope, $http){
-	$scope.thinking = false;
+app.config(function($stateProvider, $urlRouterProvider){
+	$urlRouterProvider.otherwise("/");
 
-	$scope.message = 'howdy'
-	$http.get('http://localhost:3000/posts').then(function(data){
-		$scope.posts = data.data;
-	})
-
-	$scope.delete = function(id){
-		$scope.thinking = true;
-		$http.delete('http://localhost:3000/posts/' +id).then(function(){
-			$scope.thinking = false;
-			$scope.posts.forEach(function(el,idx){
-				if(el.id === id){
-					$scope.posts.splice(idx, 1);
-				}
-			})
+	$stateProvider
+		.state('home', {
+			url: "/",
+			templateUrl: "modules/home/home.html"
 		})
-	}
-})
+		.state('posts', {
+			url: "/posts",
+			templateUrl: "modules/posts/posts.html",
+			controller: "posts"
+		})
+		.state('compose', {
+			url: "/compose",
+			templateUrl: "modules/compose/compose.html",
+			controller: "compose"
+		})
+});
+
+
