@@ -3,19 +3,21 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="modules/posts/posts.css">
 	<script src="/bower_components/angular/angular.js"></script>
 	<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
 </head>
 <body class="container">
 	<div class="row">
 		<div class="col-sm-12">
 			<ul class="nav nav-pills">
-			  <li role="presentation" ui-sref-active="active"><a ui-sref="home">Home</a></li>
 			  <li role="presentation" ui-sref-active="active"><a ui-sref="posts">Posts</a></li>
 			  <li role="presentation" ui-sref-active="active"><a ui-sref="compose">Compose</a></li>
 			</ul>
 		</div>
 	</div>
+	<hr>
 	<div class="row">
 		<div ui-view class="col-sm-12"></div>
 	</div>
@@ -23,5 +25,6 @@
 	<script src="article-service.js"></script>
 	<script src="modules/compose/compose-ctrl.js"></script>
 	<script src="modules/posts/posts-ctrl.js"></script>
+	<script src="modules/posts/post/post-ctrl.js"></script>
 </body>
 </html>
