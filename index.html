@@ -1,0 +1,30 @@
+<html ng-app='app'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+	<script src="/bower_components/angular/angular.js"></script>
+	<style>
+		#overlay{
+			height: 100%;
+			width: 100%;
+			background-color: rgba(0,0,0,.6);
+		}
+
+	</style>
+</head>
+<body ng-controller="main" class="container">
+	<div id="overlay" ng-show="thinking">
+		<img src="714.gif" alt="">
+	</div>
+
+	<h1>POSTS</h1>
+
+	<article ng-repeat="post in posts">
+		<button class="btn btn-danger" ng-click="delete(post.id)">DELETE</button>
+		<aside>{{post.author}}</aside>
+		<h2>{{post.title}}</h2>
+	</article>
+	<script src="app.js"></script>
+</body>
+</html>
