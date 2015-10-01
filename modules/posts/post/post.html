@@ -1,0 +1,9 @@
+<h2 ng-show="loading">Loading <span><img src="modules/posts/360.gif" height="30" alt=""></span></h2>
+
+<div class="panel panel-default">
+  <div class="panel-heading">{{post.title}}<span class="glyphicon glyphicon-trash" style="float:right" ng-click="delete(post.id)"></span></div>
+  <div class="panel-body">
+    <p ng-bind="post.body"></p>
+    <h5 ng-bind="post.author"></h5>
+  </div>
+</div>
