@@ -1,20 +1,30 @@
-#HOMEWORK
+#Blog Assignment
+###As a user, I want to visit a website where I can see already written posts, write new posts, and delete posts. 
 
-1. Use bootstrap components (probably a form), to give the user an ability to write posts. match the posts to the format of the original json-server example with a body too.
+##Tools
+- Angular UI Router
+- JSON-server
+- Bootstrap
+- Angular
 
-```
- { "id": 1, "title": "json-server", "author": "typicode", "body": "This is the post body!" }
- ```
+##Steps
+- Create an angular application inside of an index.html
+- Import angular ui-router to your module
+- In your app's config, create states for 'posts', and 'compose'
+- Create templates for the posts view, and compose view
+- Create controllers for 'posts' and 'compose'
+- Create a service to talk to the json-server
+ - write a method to request all posts (GET)
+ - write a method to create a post (POST)
+ - write a method to remove a post (DELETE)
+- Import your articles service in your 'posts' and 'compose' controllers
+- Use your articles service in the 'posts' controller to grab all the posts and put them on a $scope property
+- Use bootstrap to display the posts found on the $scope property from the last step
+- Create a button that can talk to the controller => talk to the articles service to delete the clicked article
+- In the compose controller use the articles service create method inside of a $scope.submit function that your HTML can access
 
-2. When clicks 'Submit', grab the form fields and do a POST request to the JSON-server to save the post.
+Make sure you can view the articles, create articles, and delete articles
 
----
-
-3. Use bootstrap components to display the current posts as well
-
- - Include a delete button to delete the post
-
-
-##BONUS ROUND!!!!
-
-4. Allow the user to edit the posts.
+##BONUS ROUND
+- Create a state for viewing a single post
+- Let the user edit posts
