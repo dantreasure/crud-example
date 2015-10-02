@@ -6,7 +6,7 @@
  { "id": 1, "title": "json-server", "author": "typicode", "body": "This is the post body!" }
  ```
 
- 2. When clicks 'Submit', grab the form fields and do a POST request to the JSON-server to save the post.
+2. When clicks 'Submit', grab the form fields and do a POST request to the JSON-server to save the post.
 
 ---
 
